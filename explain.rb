@@ -1,4 +1,10 @@
 class Object
+
+  def returning(value)
+    yield(value)
+    value
+  end
+
   def explain
     returning Hash.new do |h|
       if self.is_a?(Hash)
