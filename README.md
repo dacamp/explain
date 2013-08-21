@@ -1,15 +1,38 @@
-explain
+JSplain
 =======
 
-Ruby-ism to explain a complex structure without diving in too deep.
-
-I use the returning method which I've included as well.
-
+Ruby-ism to explain a complex JSON structure without diving in too deeply.
 Simply call it against any object and it will dive through it.
 
-I created it easily get the structure from a cached AWS client call.
 
-With JSON.pretty_generate you'll get output similar to this.
+Installation
+----------------
+
+    gem install jsplain
+
+Usage
+--------
+### CLI
+
+    $ jsplain path/to/file
+    $ jsplain http://blogname.blogspot.com/feeds/posts/default?alt=json
+    $ jsplain -h
+         jsplain [path | url]
+
+### Code
+
+Nearly any Object can be explained.
+
+* Arrays will be explained only as deeply as one element deep.
+* Hashes will explain their key value pairs until value is no longer an Array or Hash.
+
+```ruby
+require 'jsplain'
+object.explain
+```
+
+Example
+------------
 
 ```json
 {

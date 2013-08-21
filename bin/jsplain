@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+$:.unshift File.expand_path('../../lib', __FILE__)
+require 'jsplain'
+
+if ARGV.any? && ARGV.first !~ /-?-h(elp)?/
+  jsplain ARGV.first
+else
+  puts "#{$0} [path | url]"
+  exit 0
+end
