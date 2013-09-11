@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Ruby-ism to explain a complex JSON structure without diving in too deeply.
 Simply call it against any object and it will dive through it.}
   spec.homepage      = "https://github.com/dacamp/jsplain"
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
